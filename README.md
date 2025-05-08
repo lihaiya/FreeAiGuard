@@ -64,18 +64,17 @@ DELETE FROM production_table WHERE id=123;
 🛑 非窗口期执行 `iptables -F` 将自动触发安全告警  
 
 ### 场景3：多厂商网络设备统一审计  
-![Multi-Vendor Support](docs/images/multi-vendor-log.png)
 
 ---
 
 ## 🛠️ 技术栈:golang python vue JavaScript
-/** 
+<!-- 
 - **日志采集**：Filebeat/Logstash 插件  
 - **AI分析**：PyTorch + Transformers（预训练运维语料库）  
 - **存储**：Elasticsearch + PostgreSQL（审计日志）  
 - **告警**：Celery + Redis 异步队列  
 - **前端**：Vue3 + ECharts
-  **/
+  -->
 
 ---
 

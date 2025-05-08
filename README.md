@@ -1,8 +1,7 @@
 # FreeAIGuard - 开源智能运维哨兵  
 
 **🚀 专注运维操作风险防控 | AI驱动的实时盯防系统 | 跨平台日志审计利器**  
-
-**👉 项目地址**：`https://github.com/yourorg/freeaiguard`  
+**👉 项目地址**：`https://github.com/lihaiya/freeaiguard`  
 **📖 在线文档**：`编写ing`  
 
 ---
@@ -69,12 +68,14 @@ DELETE FROM production_table WHERE id=123;
 
 ---
 
-## 🛠️ 技术栈  
+## 🛠️ 技术栈:golang python vue JavaScript
+/** 
 - **日志采集**：Filebeat/Logstash 插件  
 - **AI分析**：PyTorch + Transformers（预训练运维语料库）  
 - **存储**：Elasticsearch + PostgreSQL（审计日志）  
 - **告警**：Celery + Redis 异步队列  
-- **前端**：Vue3 + ECharts  
+- **前端**：Vue3 + ECharts
+  **/
 
 ---
 
@@ -83,9 +84,7 @@ DELETE FROM production_table WHERE id=123;
 
 ---
 
-## 📜 开源协议  
-GPL3.0
-
+## 📜 开源协议:GPL3.0
 ---
 
 ## 📞 联系我们  
@@ -99,7 +98,6 @@ GPL3.0
 ### 附录  
 - [Benchmark 报告]((docs/编写ing)  
 - [与商业软件对比表]((docs/编写ing)  
-- [企业级部署方案](docs/编写ing)  
+- [企业级部署方案](docs/编写ing) 
 
 ---
-

@@ -97,6 +97,5 @@ DELETE FROM production_table WHERE id=123;
 ### 附录  
 - [Benchmark 报告]((docs/编写ing)  
 - [与商业软件对比表]((docs/编写ing)  
-- [企业级部署方案](docs/编写ing) 
 
 ---

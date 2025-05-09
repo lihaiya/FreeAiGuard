@@ -90,7 +90,7 @@ DELETE FROM production_table WHERE id=123;
 📧 微信：freeaiclub
 💬 电话：+86-15700176897  
 
-**⭐ 如果这个项目对你有帮助，请给我们一个 Star！**  
+**⭐ 如果这个项目对你有帮助，请给我们一个 Star！！**  
 
 ---
 

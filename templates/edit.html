@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body>
+<div class="flex h-screen bg-gray-200 font-roboto">
+    {{ template "sidebar.html" .admins}}
+    <div class="flex-1 flex flex-col overflow-hidden">
+        {{ template "header.html" .user}}
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+            <div class="container mx-auto px-6 py-5">
+                <div class="p-3 w-1/2 bg-white shadow-md rounded-md border">
+                    <form name="addModel" action="/admin/{{.name}}/{{.id}}" method="post">
+                        {{- range $value := .form }}
+                            <label class="text-gray-700 mt-1 ">{{ $value.Label }}</label>
+                            {{- if eq $value.Type "select" }}
+                            <div>
+                                <select name="{{.Name}}" class="form-select px-4 w-full rounded mb-2 mt-1">
+                                    {{- range $value.Enum}}
+                                    {{- if eq .Key $value.Value}}
+                                    <option value="{{.Key}}" selected="selected" >{{.Value}}</option>
+                                    {{- else }}
+                                    <option value="{{.Key}}"  >{{.Value}}</option>
+                                    {{- end}}
+                                    {{- end}}
+                                </select>
+                            </div>
+                            {{- else if eq $value.Type "textarea" }}
+                                <textarea name="{{$value.Name}}" class="form-textarea  block mb-2 mt-1 w-full rounded">{{$value.Value}}</textarea>
+                            {{- else if eq $value.Type "radio" }}
+                                <div class="block mb-2 mt-1">
+                                    {{- range .Enum}}
+                                    <label class="ml-1 mr-2 p-1">
+                                        {{- if eq .Key $value.Value}}
+                                        <input type="radio" class="form-radio p-1 mb-2 mt-1" name="{{$value.Name}}" value='{{.Key}}' checked="true"/> {{.Value}}
+                                        {{- else }}
+                                        <input type="radio" class="form-radio p-1 mb-2 mt-1" name="{{$value.Name}}" value='{{.Key}}'/> {{.Value}}
+                                        {{- end}}
+                                    </label>
+                                    {{- end}}
+                                </div>
+                            {{- else }}
+                            {{- if $value.Disable}}
+                                <input class="form-input w-full mt-1 mb-2 rounded-md focus:border-indigo-600 border bg-gray-300"
+                                       type="{{$value.Type}}" name="{{$value.Name}}" value="{{$value.Value}}"
+                                        disabled
+                                />
+                            {{- else }}
+                                <input class="form-input w-full mt-1 mb-2 rounded-md focus:border-indigo-600 border"
+                                       type="{{$value.Type}}" name="{{$value.Name}}" value="{{$value.Value}}"
+                                />
+                            {{- end}}
+                            {{- end}}
+                        {{- end}}
+                        <input type="submit" class="px-3 py-1 bg-indigo-600 text-white rounded-md  hover:bg-indigo-500 focus:outline-none">
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
